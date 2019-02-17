@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"> 
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="../css/chat.css" />
+		<link rel="stylesheet" href="../css/mui.min.css"> 
+	</head>
+ 
+	<body>   
+        <header class="mui-bar mui-bar-nav" style="background: cornflowerblue;">
+	       <span id="returnid" class="mui-icon mui-icon-arrowleft" style="color: white;"></span>
+	      <h1 class="mui-title">聊天</h1>
+	    </header>
+		<div class="mui-content  mui-bar-transparent" id='sss'>
+			<div id="chat_content">
+				<!--<div class="jkmsg mui-row">
+					<div class="mui-col-xs-2 jkimg">
+						<img src="hpic/ghw.jpg" id="img_src" class="imgbtn" alt="" />
+					</div>
+					<div class="mui-col-xs-8 jktext bs-bb">
+						<b class="jkborder"></b>
+						<span class="bdFontSize" >Hi，我可是无所不知的噢，有什么可以来找我聊！</span>
+					</div>
+					<div class="mui-col-xs-2"></div>
+				</div> 
+			    <div class="fsmsg mui-row">
+					<div class="mui-col-xs-2"></div>
+					<div class="mui-col-xs-8 fstext bs-bb">
+					<b class="fsborder"></b>
+					<span class="bdFontSize ta-r">Hello，我可是无所不知的噢，有什么可以来找我聊！Hi，我可是无所不知的噢，有什么可以来找我聊！Hi，我可是无所不知的噢，有什么可以来找我聊！</span>
+				</div>
+					<div class="mui-col-xs-2 ta-r jkimg">
+						<img src="hpic/gzp.jpg" alt="" /> 
+					</div>
+				</div>-->
+			</div>
+			<div style="height: 80px;" id="refreshContainer" class="mui-content  mui-bar-transparent"></div>
+		</div>
+		<footer class="mui-bar mui-bar-footer">
+			<button id="send" style="float: right;margin-top:2%;background:cornflowerblue;">发送</button>
+			<div class="mui-input-row" >
+				<input id="text_value" type="text" class="mui-input-speech mui-input-clear" placeholder="语音输入" style="width: 95%; border:solid 1px gray;border-top:none;border-right: none;border-left: none;margin-top: 1%;">				
+			</div>			
+		</footer>
+		<script src="../js/mui.min.js"></script>
+		 <script src="../js/jquery-3.2.1.min.js"></script>
+		 <script src="../js/chat.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+		</script>
+
+	</body>
+
+</html>

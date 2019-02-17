@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+		<script type="text/javascript"> 
+			mui.init()
+		</script>
+		<link rel="stylesheet" href="../css/commonStyle.css" />
+		<link rel="stylesheet" href="../css/discover.css" />
+	</head>
+	<body>
+    <header class="headerTitle mui-bar mui-bar-nav" style="background: cornflowerblue;">
+	    <h1 style="float: left;font-size: 18px; margin: 18px 0px">微信</h1> 
+	    <h1>
+	    	<font  style="font-size:38px ;float: right;margin: 2px 8px;font-weight: 300;" >+</font>
+	    	<i class="fa fa-search" style="font-size: 24px;float: right;margin: 8px 35px;" aria-hidden="true"></i>
+	    </h1>
+	</header>
+		<div style="height: 7px;"></div>
+	<div class="mui-content">
+	    <ul class="mui-table-view" style="line-height: 30px;">
+	        <li id="moments" class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	            	<span class="newFirend friendsmenu mui-pull-left iconfontyyy" style="color:coral ">&#xe604;</span>
+	                <div class="mui-media-body friends">朋友圈</div>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	<div class="groupClass">
+	    <ul class="mui-table-view" style="line-height: 30px;">
+	        <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	            	<span class="newFirend friendsmenu mui-pull-left iconfontyyy" style="color:cornflowerblue ">&#xe602;</span>
+	                <div class="mui-media-body friends" >扫一扫</div>
+	            </a>
+	        </li>
+	         <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	            	<span class="newFirend friendsmenu mui-pull-left iconfontyyy" style="color:cornflowerblue ">&#xe685;</span>
+	                <div class="mui-media-body friends">摇一摇</div>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	
+	<div class="groupClass">
+	    <ul class="news mui-table-view" style="line-height: 30px;">
+	        <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	            	<span class="newFirend friendsmenu mui-pull-left iconfontyyy" style="color:darkgoldenrod ">&#xe608;</span>
+	                <div class="mui-media-body friends">附件的人</div>
+	            </a>
+	        </li>
+	         <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	            	<span class="newFirend friendsmenu mui-pull-left iconfontyyy" style="color:darkgoldenrod ">&#xe60d;</span>
+	                <div class="mui-media-body friends">漂流瓶</div>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	
+	<div class="groupClass">
+	    <ul class="news mui-table-view" style="line-height: 30px;">
+	        <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	            	<span class="newFirend friendsmenu mui-pull-left iconfontyyy" style="color:coral ">&#xe61d;</span>
+	                <div class="mui-media-body friends">游戏</div>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	
+	<div class="groupClass" style="line-height: 30px;">
+	    <ul class="news mui-table-view">
+	        <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	            	<span class="newFirend friendsmenu mui-pull-left iconfontyyy" style="color:blue ">&#xe60e;</span>
+	                <div class="mui-media-body friends">小程序</div>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	<script type="text/javascript">
+			var moments = document.getElementById('moments');
+			moments.addEventListener('touchend',openMoments);
+			
+			function openMoments(){
+				
+				mui.openWindow({
+					
+						url:"Moments.html",
+						
+						id:"Moments.html",
+						
+						createNew: false,
+				
+						show:{
+							autoShow:true,
+							aniShow:'slide-in-right',
+							duration:100
+						}
+						
+	        	});
+			}
+	</script>
+	
+	</body>
+</html>

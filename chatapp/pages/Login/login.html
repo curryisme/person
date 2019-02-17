@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../../js/mui.min.js"></script>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/base.css" />
+</head>
+<body>  
+	<header class="mui-bar mui-bar-nav" id="bg">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id="bg_nav"></a>
+		<h1 class="mui-title">登录</h1>
+	</header>
+	<div class="mui-content" id="login">
+		<ul class="mui-table-view" id="login_public">
+			<li class="mui-table-view-cell">
+				<label for="">手机号码:</label>
+				<input type="text"/>	
+			</li>
+			<li class="mui-table-view-cell">
+				<label for="">密码:</label>
+				<input type="password"/>	
+			</li>
+		</ul>
+		<button class="button" id="button">登录</button>
+		<p>
+			<a href="javascript:;" class="a">立即注册</a>
+			&nbsp;|&nbsp;
+			<a href="javascript:;" class="a">找回密码</a>
+		</p>
+	</div>
+	
+	<script>
+		mui.init();
+    	//localStorage.removeItem('Myid');
+    	function login_in(){
+    	var input = document.getElementsByTagName('input');
+		var a = document.getElementsByClassName('a');
+		var btn = document.getElementById('button');
+		btn.onclick = function(){
+			var phone = input['0'].value;
+			var password = input['1'].value;
+			
+			if(phone == ''){
+				mui.toast('手机号码不能为空');
+				return;
+			}
+			if(password == ''){
+				mui.toast('密码不能为空');
+				return;
+			}
+			//47.107.224.220
+			mui.get('http://47.107.224.220/wx/Demo2.php',{
+				tr_phone:phone,
+				tr_password:password 
+				
+			},function(data){
+				//如果登录成功，跳转到主页面
+				if(data['tr_id']!='0')
+				{
+					localStorage.setItem('userimg',data['tr_img']);
+					localStorage.setItem('Myid',data['tr_id']);
+				    mui.openWindow({ 
+						url:'../../index.html',
+						id:'index',
+						waiting:{ // 控制 弹出转圈框的信息
+		                    autoShow:false,//自动显示等待框，默认为true 
+		                }
+			        });
+				}else{
+					mui.toast('密码错误');
+				}
+				
+			}							
+			,'json');
+		}
+		
+		a['0'].onclick = function(){
+			mui.openWindow({
+				url:'register.html',
+				id:'user_register',
+				waiting:{ // 控制 弹出转圈框的信息
+                    autoShow:false,//自动显示等待框，默认为true 
+                }
+			})
+		}
+		
+		a['1'].onclick = function(){
+			mui.openWindow({
+				url:'find_password.html',
+				id:'user_find_password',
+				waiting:{ // 控制 弹出转圈框的信息
+                    autoShow:false,//自动显示等待框，默认为true 
+                }
+			})
+		}
+    	}
+    	
+		mui.plusReady(function(){
+
+				if(localStorage.getItem('Myid')){
+				mui.openWindow({ 
+							url:'../../index.html',
+							id:'index',
+							waiting:{ // 控制 弹出转圈框的信息
+			                    autoShow:false,//自动显示等待框，默认为true 
+			                }
+				       }); 
+			    }else{
+			    	login_in();
+			    }
+			var index = plus.webview.getLaunchWebview();
+			mui.fire(index,'gohome',{});
+			
+			
+		});
+		
+		
+		
+	
+	</script>
+	
+</body>
+</html>

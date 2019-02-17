@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../../js/mui.min.js"></script>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/base.css" />
+</head> 
+<body>
+	<header class="mui-bar mui-bar-nav" id="bg">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id="bg_nav"></a>
+		<h1 class="mui-title">注册</h1>
+	</header>
+	<div class="mui-content" id="login">
+			
+		<ul class="mui-table-view" id="login_public">
+			<li class="mui-table-view-cell">
+				<label for="">手机号码:</label>
+				<input type="text"/>	
+			</li>
+			<li class="mui-table-view-cell" id="code">
+				<label for="">验证码:</label>
+				<input type="text"/>	
+				<button id="find_code">发送验证码</button>
+			</li>
+			<li class="mui-table-view-cell">
+				<label for="">密码:</label>
+				<input type="text"/>	
+			</li>
+			<li class="mui-table-view-cell">
+				<label for="">确认密码:</label>
+				<input type="text"/>	
+			</li>
+		</ul>
+		
+		<button class="button" id="button">立即注册</button>
+		<p>
+			<a href="javascript:;" class="mui-action-back">立即登录</a>
+		</p>	
+	</div>
+	<script src="../js/uuid.js"></script>
+	<script>
+		mui.init();
+		
+		var input = document.getElementsByTagName('input');
+		var a = document.getElementsByClassName('mui-action-back');
+		a.onclick = function(){
+			mui.back();
+		}
+		var btn = document.getElementById('button');
+		btn.onclick = function(){
+			
+			var phone = input['0'].value;
+			var code = input['1'].value;
+			var password = input['2'].value;
+			var repasswrod = input['3'].value;
+			
+			if(phone == ''){
+				mui.toast('手机号码为空');
+				return;
+			}
+			
+			if(password == ''){
+				mui.toast('密码不能为空');
+				return;
+			}
+			if(repasswrod == ''){
+				mui.toast('确认密码不能为空');
+			}
+			if(password != repasswrod){
+				mui.toast('两次密码输入不一致');
+				return;
+			}
+			
+			
+			mui.get('http://ketang.dongyixueyuan.com/index.php/Login/register_do',{
+				phone_data:phone,
+				password_data:password
+			},function(data){
+				
+				if(data == '1'){
+					mui.toast('注册成功');
+					localStorage.setItem('dongyiketang_login',phone);
+							
+					mui.plusReady(function(){	
+								
+						
+						//来调用消息模块
+						var message = plus.webview.getWebviewById('message.html');
+						mui.fire(message,'get_message',{});
+						
+						
+						var index = plus.webview.getLaunchWebview();
+						mui.fire(index,'check_message',{});
+						
+						var home = plus.webview.getWebviewById('home.html');
+						mui.fire(home,'get_user_info',{});
+						
+						index.show();	
+					});
+				}else if(data == '2'){
+					mui.toast('手机号码已存在');
+				}else{
+					mui.toast('注册失败');
+					
+				}
+				
+				
+			},'json');
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		//生成验证码
+		function create_code(){
+
+			code_data = Math.floor(Math.random()*10000+1000).toString();
+			return code_data;
+			
+		}
+		
+		
+		
+	
+	</script>
+	
+</body>
+</html>

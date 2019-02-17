@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/commonStyle.css" />
+		<link rel="stylesheet" type="text/css" href="../css/personal.css"/>
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+	</head>
+
+	<body>
+		<header class="headerTitle mui-bar mui-bar-nav">
+	    <a id="return" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ><span style="font-size: 16px;">朋友圈</span></a>
+	    <h1>
+	    	<font  style="font-size:24px ;float: right;margin: 0px 8px;font-weight: 700;" >...</font>	
+	    </h1>
+	    </header> 
+	    
+	    <div class="mui-content">
+		    <ul class="mui-table-view" style="margin-top: 25px;" id="per_info">
+			    <li class="mui-table-view-cell mui-media" >
+			        <a href="javascript:;">
+			            <img id="img_info" class="mui-media-object mui-pull-left" style=" height: 50px;width: 60px;"  >
+			            <div class="mui-media-body">
+			            	<font style="position: absolute; font-size: 18px;font-weight: 600;margin-top: 4px;" id="user_name">纸飞机</font>
+			                <p id="friend_name" style="position: absolute; margin-top: 30px;"class='mui-ellipsis'></p>
+			            </div>
+			        </a>
+			    </li>
+			</ul>
+			
+			<div class="groupClass">
+		    <ul class="news mui-table-view" style="line-height: 30px;">
+		        <li class="mui-table-view-cell mui-media">
+		            <a href="javascript:;">
+		            	设置备注和标签
+		            </a>
+		        </li>
+		    </ul>
+	        </div>
+		    
+		    <div class="groupClass">
+			    <ul style="line-height: 30px;" class="news mui-table-view">
+			        <li class="mui-table-view-cell mui-media">
+			            <a href="javascript:;">
+			            	<span class="newFirend friendsmenu mui-pull-left" style="font-size: 16px">地区</span>
+			                <div class="mui-media-body friends" style="margin-left: 30%;color: darkgray;font-size: 16px;">广东 揭阳</div>
+			            </a>
+			        </li>
+			          <li class="mui-table-view-cell mui-media" style="height: 85px;">
+			            <a href="javascript:;">
+			            	<span class="newFirend friendsmenu mui-pull-left" style="font-size: 16px;margin-top: 15px;">个人相册</span>
+			                <div class="mui-media-body friends" style="margin-left: 30%;color: darkgray;font-size: 16px;">
+			                	<div>
+			                		<img style="height: 60px;width: 60px;" src="../images/friendimg1.png" />
+			                		<img style="height: 60px;width: 60px;" src="../images/firendimg2.png" />
+			                		<img style="height: 60px;width: 60px;" src="../images/firendimg3.png" /> 
+			                	</div>
+			                </div>
+			            </a>
+			        </li>
+			         <li class="mui-table-view-cell mui-media">
+			            <a href="javascript:;">
+			            	<span class="newFirend friendsmenu mui-pull-left" style="font-size: 16px">更多</span>
+			            </a>
+			        </li>
+			    </ul>
+	        </div>
+		    <div class="groupClass">
+		    <button type="button" style="margin-left:5%;width: 90%;background: #1AAD19;height: 40px;color: white;font-size: 20px;">发消息</button>
+		    </div>
+		    <div class="groupClass">
+		    <button type="button" style="margin-left:5%;width: 90%;background: white;height: 40px;color: black;font-size: 20px;">视频通话</button>
+		    </div>
+	    </div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			document.getElementById('user_name').innerText=localStorage.getItem('friend_name');
+			document.getElementById('img_info').setAttribute('src','../hpic/'+ localStorage.getItem('imgsrc'));
+			document.getElementById('friend_name').innerText="备注："+localStorage.getItem('friend_name');
+			
+		</script>
+	</body>
+
+</html>

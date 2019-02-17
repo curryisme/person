@@ -1,0 +1,169 @@
+{
+	"index.html": {
+		"resources": [
+			"pages/news.html",
+			"pages/contact.html",
+			"wechat.html",
+			"discover.html",
+			"pages/wechat.html"
+		],
+		"refer": [
+			"pages/contact.html",
+			"pages/news.html",
+			"pages/dong_tai.html",
+			"pages/watch_point.html",
+			"wechat.html",
+			"contact.html",
+			"discover.html",
+			"memsg.html",
+			"pages/discover.html",
+			"pages/wechat.html",
+			"pages/memsg.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"main.html",
+			"forget_password.html",
+			"reg.html",
+			"index.html"
+		],
+		"resources": []
+	},
+	"reg.html": {
+		"refer": [
+			"login.html"
+		],
+		"resources": []
+	},
+	"main.html": {
+		"refer": [
+			"index.html"
+		],
+		"resources": []
+	},
+	"contact.html": {
+		"resources": [
+			"hpic/\u001d�.jpg"
+		],
+		"refer": []
+	},
+	"wechat.html": {
+		"resources": [
+			"hpic/\u001d�.jpg"
+		],
+		"refer": [
+			"chatRoom.html",
+			"news.html"
+		]
+	},
+	"discover.html": {
+		"refer": [
+			"Moments.html"
+		],
+		"resources": []
+	},
+	"Moments.html": {
+		"refer": [
+			"sureSend.html",
+			"discover.html"
+		],
+		"resources": []
+	},
+	"sureSend.html": {
+		"refer": [
+			"Moments.html"
+		],
+		"resources": []
+	},
+	"pages/person_info_more.html": {
+		"refer": [
+			"pages/person_info.html",
+			"pages/person_info_signature.html",
+			"pages/person_info_area.html"
+		],
+		"resources": []
+	},
+	"pages/person_info.html": {
+		"refer": [
+			"pages/person_info_more.html",
+			"pages/person_info_name.html",
+			"memsg.html",
+			"index.html"
+		],
+		"resources": []
+	},
+	"pages/person_info_name.html": {
+		"refer": [
+			"pages/person_info.html"
+		],
+		"resources": []
+	},
+	"pages/person_info_signature.html": {
+		"refer": [
+			"pages/person_info_more.html"
+		],
+		"resources": []
+	},
+	"pages/person_info_area.html": {
+		"refer": [
+			"pages/person_info_more.html"
+		],
+		"resources": []
+	},
+	"memsg.html": {
+		"refer": [
+			"pages/person_info.html",
+			"pages/locker-dom.html",
+			"pages/Login/login.html"
+		],
+		"resources": [
+			"pages/person_info.html"
+		]
+	},
+	"pages/locker-dom.html": {
+		"refer": [
+			"pages/money.html"
+		],
+		"resources": []
+	},
+	"pages/money.html": {
+		"refer": [
+			"pages/locker-dom.html"
+		],
+		"resources": []
+	},
+	"news.html": {
+		"refer": [
+			"pages/img_info.html"
+		],
+		"resources": []
+	},
+	"pages/Login/login.html": {
+		"refer": [
+			"wechat.html",
+			"index.html"
+		],
+		"resources": []
+	},
+	"pages/wechat.html": {
+		"refer": [
+			"pages/news.html"
+		]
+	},
+	"pages/discover.html": {
+		"refer": [
+			"pages/Moments.html"
+		]
+	},
+	"pages/Moments.html": {
+		"refer": [
+			"pages/sureSend.html"
+		]
+	},
+	"pages/memsg.html": {
+		"refer": [
+			"pages/person_info.html"
+		]
+	}
+}

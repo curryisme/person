@@ -1,0 +1,31 @@
+.rspan{
+	float: right;
+	color:#C0C0C0;
+}
+.mui-active{
+	color:green;
+}
+.groupClass{
+	margin-top:1.5rem;
+}
+.newFirend{
+	margin-right:1.5rem;
+}
+.imgcss{
+	 height: 60px;
+	 width: 60px;
+	 float:right
+}
+
+.info_font{
+	position: absolute;
+	font: "微软雅黑";
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+.imgcss2{
+	 height: 20px;
+	 width: 20px;
+	 float:right
+}

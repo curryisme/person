@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />	
+		<link rel="stylesheet" href="../css/commonStyle.css" />
+		<link rel="stylesheet" type="text/css" href="../css/personal.css"/>
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+	</head>
+
+	<body>
+		<header class="headerTitle mui-bar mui-bar-nav" style="background: #000000;">
+           <a id="return" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ><span id="name" style="font-size: 16px;">个人信息</span></a>
+           <h1 class="mui-title"></h1>    
+        </header> 
+        <div class="mui-content">	
+        <ul class="mui-table-view" style="margin-top: 25px;line-height: 25px;" >
+		    <li class="mui-table-view-cell mui-media" >
+		        <a href="javascript:;">
+		        	<div class="info_font">头像</div>
+		            <img class="imgcss"  src="../hpic/gzp.jpg">            
+		        </a>
+		    </li>
+		     <li class="mui-table-view-cell mui-media" id="user_name">
+	            <a href="javascript:;">	            	
+	                <div class="mui-media-body"  style="font-size: 14px;">
+	                	昵称
+	                	<font style="float: right;color: gray;" id="username"></font>
+	                </div>
+	            </a>
+	        </li>
+	         <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">	            	
+	                <div class="mui-media-body friends" style="font-size: 14px;">
+	                	微信号
+	                	<font style="float: right;color: gray;">Azhenpeng</font>
+	                </div>
+	            </a>
+	        </li>
+	         <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">            	
+	                <div class="mui-media-body friends" style="font-size: 14px;">
+	                	二维码名片
+	                	<img class="imgcss2"  src="../hpic/erweima.png"> 
+	                </div>
+	            </a>
+	        </li>
+	         <li class="mui-table-view-cell mui-media" id="more">
+	            <a href="javascript:;">	            	
+	                <div class="mui-media-body friends" style="font-size: 14px;">更多</div>
+	            </a>
+	        </li>
+		</ul>
+		
+		<div class="groupClass">
+	    <ul class="news mui-table-view" style="line-height: 25px;" id="address">
+	        <li class="mui-table-view-cell mui-media">
+	            <a href="javascript:;">
+	                <div class="mui-media-body" style="font-size: 14px;">我的地址</div>
+	            </a>
+	        </li>
+	    </ul>
+	    </div>	
+    </div>
+    
+    <script src="../js/mui.min.js"></script>
+		<script src="../js/person_info.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			document.getElementById('return').addEventListener('tap',function(){
+				var mother_page = plus.webview.currentWebview().opener();
+				mother_page.reload();
+			})
+		</script>
+	</body>
+
+</html>

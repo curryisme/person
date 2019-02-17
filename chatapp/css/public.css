@@ -1,0 +1,595 @@
+/*
+ * 20171128 add lidonghui
+ * css公用文件 配置文件
+ * app页面样式配置
+ * 
+ **/
+
+
+/*轮播图高度配置*/
+
+.slider-height {
+	height: 200px;
+}
+
+
+/*页面顶部标题栏颜色*/
+
+.titleBar-bgcolor {
+	background-color: #009be0 !important;
+}
+
+.mui-bar-nav {
+	box-shadow: 0 1px 0px #009be0 !important;
+}
+
+
+/*顶部标题颜色*/
+
+.titleBar-color {
+	color: #fff !important;
+}
+
+
+/*页面底部tab栏颜色*/
+
+.tabBar-bgcolor {
+	background-color: #009be0 !important;
+}
+
+
+/*页面按钮颜色*/
+
+.btn-style {
+	color: #;
+}
+
+
+/* 底部选项卡默认颜色*/
+
+.mui-bar-tab .mui-tab-item {
+	color: #8EDBD3 !important;
+}
+
+
+/*底部选项卡选中颜色*/
+
+.mui-bar-tab .mui-tab-item.mui-active {
+	color: #ffffff !important;
+}
+
+.c-ff {
+	color: #ffffff !important;
+}
+
+.c-a3 {
+	color: #a3aab2;
+}
+.c-33{
+	color:#163B5B;
+}
+
+/*
+ * add lidonghui 
+ * 以下css文件为公用样式文件
+ * 
+ **/
+.bs-bb {
+	box-sizing: border-box;
+}
+
+.bgc-ff {
+	background-color: #ffffff;
+}
+
+.bdFontSize {
+	font-size: 16px !important;
+}
+
+.ttFontSize {
+	font-size: 18px !important;
+}
+
+.listFontSize {
+	font-size: 14px !important;
+}
+
+.smFontSize {
+	font-size: 12px !important;
+}
+.xsFontSize{
+	font-size:10px !important;}
+
+.ta-c {
+	text-align: center;
+}
+
+.dp-n {
+	display: none;
+}
+
+
+/*
+ * add lidonghui 
+ * 以下css文件为app各页面单独样式
+ * 
+ **/
+
+
+/*home页面*/
+
+.home-listbox {
+	width: 100%;
+	padding: 10px 10px 5px 10px;
+	margin-top: 5px;
+	border-bottom: 2px solid #e3e4e8;
+}
+
+.serviceTitle {
+	width: 100%;
+	text-align: center;
+}
+
+.serviceTitle>span {
+	background-color: #50c1e9;
+	color: #fff;
+	padding: 3px 5px;
+	border-radius: 5px;
+}
+
+.row-imgbox {
+	margin-top: 10px;
+}
+
+.imgbox>img {
+	width: 50px;
+	height: 50px;
+}
+
+
+/*关于我们*/
+
+.span-m {
+	margin: 5px 15px;
+	color: #47565F;
+}
+
+.pt-ab {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+}
+
+
+/*未完成*/
+
+.notCompleted {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 50%;
+	text-align: center;
+}
+
+
+/*银行卡界面*/
+
+.header-search {
+	width: 100%;
+	background-color: #ffffff;
+	padding: 20px;
+	border-bottom: 2px solid #e3e4e9;
+}
+
+.header-title {}
+
+.header-inp {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.header-inp>input {
+	border: 1px solid #4fc0e8 !important;
+	box-sizing: border-box;
+	padding-left: 70px;
+	color: #9b9fa8;
+}
+
+.header-inp>span {
+	display: inline-block;
+	width: 60px;
+	height: 38px;
+	background-color: #f1f2f6;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	background-image: url(../images/search.png);
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: 17px 7px;
+}
+
+.header-btn {
+	text-align: center;
+}
+
+.header-btn>button {
+	padding: 5px 20px;
+	background-color: #50c1e9;
+	border: none;
+}
+
+.content {
+	background-color: #ffffff;
+	margin-top: 10px;
+	border-bottom: 2px solid #e3e4e9;
+}
+
+.content-tt {
+	padding: 20px 20px;
+	border-bottom: 2px solid #f2f2f2;
+}
+
+.content-list {
+	padding: 10px 20px;
+	border-bottom: 2px solid #f2f2f2;
+}
+
+
+/*汇率*/
+
+.rate-box {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #B1B7BD;
+	border-radius: 4px;
+}
+
+.figure-box {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.waitimg {
+	height: 40px;
+	background-image: url(../images/wait.png);
+	background-position: center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+
+.bd-n {
+	border: none !important;
+}
+
+.heightimg {
+	height: 40px;
+	background-image: url(../images/height.png);
+	background-position: center;
+	background-position-x: 0px;
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+}
+
+.weightimg {
+	height: 40px;
+	background-image: url(../images/weight.png);
+	background-position: center;
+	background-position-x: 0px;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+.inputstyle {
+	border-bottom: 1px solid #B1B7BD !important;
+}
+
+.resulteimg {
+	width: 150px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/*天气css*/
+.weather-box{
+	width:100%;
+	height:100%;
+	background: linear-gradient(#009be0, #009be0); 
+}
+.wt-hb{
+	width:100%;
+}
+.citybox{
+	padding:20px;
+}
+.cityname{
+	padding:5px 10px 5px 25px;
+	background-image: url(../images/wz.png);
+	background-repeat: no-repeat;
+	background-size: 17px 17px;
+	background-position: 4px 3px;
+	border-radius: 20px;
+}
+.wh-sk{
+	
+}
+.sixbox{
+	padding-left:10px;
+	padding-right:10px;
+	margin-top:40px;
+}
+.xsimg{
+	width:16px;
+	padding-top:4px;
+}
+.fgx{
+	padding:20px 20px;
+}
+.fgx>div{
+	border-top:1px solid #B7BCC4;
+}
+.daymsg{
+	padding-left:25px;
+	padding-right:25px;
+}
+.daylist{
+	height:35px;
+	line-height: 35px;
+}
+.listday{
+	width:16px;
+	position: absolute;
+	top:-2px;
+	left:-20px;
+	
+}
+.wh-img>img{
+	width:140px;
+}
+.ta-r{
+	text-align: right;
+}
+.ta-l{
+	text-align: left;
+}
+.wh-bigFontSize{
+	font-size: 50px !important;
+	
+}
+.wh-msg{
+	height:50px;
+}
+.wh-lmsg{
+	line-height: 50px;
+	padding-right:5px;
+}
+.wh-rmsg{
+	padding-left:5px;
+}
+.wh-list{
+	padding:20px;
+	margin-top:20px;
+}
+.wh-imgp{
+	padding-left:21px;
+}
+/**/
+.wh-tgimg{
+	background-image: url(../images/tfwd.png);
+	background-repeat: no-repeat;
+	background-size: 19px 19px;
+	background-position: 0px 0px;
+}
+.wh-xdimg{
+	background-image: url(../images/sd.png);
+	background-repeat: no-repeat;
+	background-size: 19px 19px;
+	background-position: 0px 0px;
+}
+.wh-jsimg{
+	background-image: url(../images/jstj.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 0px 0px;
+}
+.wh-fximg{
+	background-image: url(../images/fx.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 0px 0px;
+}
+.wh-flimg{
+	background-image: url(../images/fl.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 0px 0px;
+}
+.wh-fsimg{
+	background-image: url(../images/fs.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 0px 0px;
+}
+
+.mg-b{
+	margin-bottom:5px;
+}
+/*新闻中心*/
+
+
+/*关于我们*/
+.about-imgbox{
+	
+}
+.logo-box>img{
+	width:60px;
+	padding-top:50px;
+}
+.about-con{
+	padding:20px;
+	margin-top:10px;
+}
+.logo-text{
+	margin-top:10px;
+}
+.listbox{
+	width:100%;
+	height:100px;
+	border-radius:5px;
+	margin-top:20px;
+	 
+}
+.about-limg{
+	height:100px;
+	line-height: 100px;
+}
+.about-limg>img{
+	width:60px;
+	height:60px;
+	border-radius: 50%;
+	margin-top:20px;
+}
+.about-text{
+	padding:25px 0px;
+}
+.blg1{
+	background: linear-gradient(to left,#E98D43, #F2DD14);
+}
+.blg2{
+	background: linear-gradient(to left,#6A6CEB, #D38AFF);
+}
+.gnjs{
+	margin-top:10px;
+}
+.jyyj{
+	padding:3px;
+}
+.inut{
+	padding-left:5px !important;
+	padding-right:5px !important;
+	margin-top:10px;
+	border-color: rgba(0,0,0,0.2);
+}
+.bd-bd{
+	border:1px solid #8F8F8F;
+	border-radius:5px;
+	padding:5px 5px;
+	margin-bottom:10px;
+}
+.zfbq>img{
+	width:60%;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.zfwz{
+	margin-top:20px;
+}
+/*新闻对话框*/
+.newbox{
+	position: fixed;
+	top:0px;
+	width:100%;
+	height:100%;
+}
+.conlistbox{
+	width:100%;
+	height:100%;
+	padding-bottom:60px;
+	overflow-y: scroll;
+	
+	
+}
+.newinputbox{
+	position:fixed;
+	bottom:0px;
+	height:50px;
+	width:100%;
+	line-height: 50px;
+	background-color: #F5F5F5;
+}
+
+.new-p{
+	padding:2px 10px;
+}
+.con-cent{
+	width:99%;
+	height:40px !important;
+}
+.btn-boxfs{
+	padding-left: 5px;
+}
+.btn-fs{
+	display: inline-block;
+	width:90%;
+	height:40px !important;
+	margin-top:5px;
+	text-align: center;
+}
+.con-list{
+	width:100%;
+	padding-top:5px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.jkimg>img{
+	width:40px;
+	height:40px;
+	border-radius:20px;
+}
+.jkmsg{
+	margin-top:15px;
+}
+.jktext{
+	position: relative;
+}
+.jkborder{
+	display: inline-block;
+	border:10px solid transparent;
+	border-right:10px solid #ffffff;
+	position:absolute;
+	top:10px;
+	left:-20px;
+}
+.jktext>span{
+	min-width: 0px;
+	padding:10px 10px;
+	background-color: #ffffff;
+	border:1px solid #ffffff;
+	border-radius:5px;
+	word-break:normal; 
+	width:auto; 
+	display:block; 
+	white-space:pre-wrap;
+	word-wrap : break-word ;
+	overflow: hidden ;
+	
+}
+.fsmsg{
+	margin-top:15px;
+}
+.fstext{
+	position: relative;
+}
+.fsborder{
+	display: inline-block;
+	border:10px solid transparent;
+	border-left:10px solid #9EEA6A;
+	position:absolute;
+	top:10px;
+	right:-20px;
+}
+.fstext>span{
+	min-width: 0px;
+	padding:10px 10px;
+	border-radius:5px;
+	word-break:normal; 
+	width:auto; 
+	display:block; 
+	white-space:pre-wrap;
+	word-wrap : break-word ;
+	overflow: hidden ;
+}

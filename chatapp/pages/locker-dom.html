@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>手势锁屏示例</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css" />-->
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				background-color: #efeff4;
+			}
+			#holder {
+				width: 300px;
+				height: 300px;
+				border: solid 1px #bbb;
+				border-radius: 5px;
+				margin: 50px auto;
+				background-color: #fff;
+			}
+			#alert {
+				text-align: center;
+				padding: 20px 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color:#222222;" >
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white; "></a>
+			<div style="margin-left: 30px;">
+			<h1 style="font-size: 14px;color: white;" >手势密码</h1>
+			<h1 style="font-size: 12px;color: gray;">微信安全支付</h1>
+			</div>			
+		</header>
+		
+		<div class="mui-content">
+			<div style=" color: black;margin-top: 30px;margin-left:32%;width:40%; position: absolute;">请输入手势密码</div>
+			<div id='holder' class="mui-locker" data-locker-options='{"ringColor":"rgba(210,210,210,1)","fillColor":"#ffffff","pointColor":"rgba(0,136,204,1)","lineColor":"rgba(0,136,204,1)"}' data-locker-width='300' data-locker-height='300' style="background: none;border: none;"></div>
+			<div id='alert'></div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.locker.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				var holder = doc.querySelector('#holder'),
+					alert = doc.querySelector('#alert'),
+					record = [];
+				//	localStorage.removeItem('user_wallet');
+				//	console.log(record.length);
+				//处理事件
+				holder.addEventListener('done', function(event) {				
+					var rs = event.detail;					
+					if (rs.points.length < 4) {
+						alert.innerText = '设定的手势太简单了';
+						record = [];
+						rs.sender.clear();
+						return;
+					}
+					console.log(rs.points.join(''));
+					record.push(rs.points.join(''));
+					if(localStorage.getItem('user_wallet')==null){
+					if (record.length >= 2) {
+						if (record[0] == record[1]) {
+							//alert.innerText = '手势设定完成';
+							localStorage.setItem('user_wallet',rs.points.join(''));
+							var btnArray = ['是', '否']; mui.confirm('设置密码成功，请重新输入进入钱包功能', '温馨提示', btnArray, function(e){
+							if(e.index == 0) mui.back() ;
+							else {
+								localStorage.removeItem('user_wallet');
+								record=[];
+								mui.toast('请重新设置。')
+									}
+								});
+						} else {
+							alert.innerText = '两次手势设定不一致';
+						}
+						rs.sender.clear();
+					} else { 
+							if(localStorage.getItem('user_wallet')==null){
+						    alert.innerText = '请确认手势设定';rs.sender.clear();}
+							
+					}
+					}else{
+					if(localStorage.getItem('user_wallet')==rs.points.join('')){
+						location.href='money.html';
+					}else{
+						mui.toast('手势密码错误');
+					    rs.sender.clear();
+					}
+					}
+					
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

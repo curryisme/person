@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/commonStyle.css" />
+		<link rel="stylesheet" type="text/css" href="../css/personal.css"/>
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<script src="../js/mui.min.js"></script>
+	</head>
+
+	<body>
+		<header class="headerTitle mui-bar mui-bar-nav" style="background: #000000;">
+           <a id="return" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ><span id="name" style="font-size: 16px;">更多信息</span></a>
+           <h1 class="mui-title"></h1>    
+        </header> 
+        
+         <div class="mui-content">	
+	         <ul class="mui-table-view" style="margin-top: 25px;line-height: 25px;" >
+			     <li class="mui-table-view-cell mui-media" >
+		            <a href="#popover" id="openPopover" >		   
+		                <div class="mui-media-body"  style="font-size: 14px;">
+		                	性别
+		                	<font style="float: right;color: gray;" id="sex">男</font>
+		                </div>
+		            </a>
+		        </li>
+			     <li class="mui-table-view-cell mui-media" id="user_area">
+		            <a href="javascript:;">	            	
+		                <div class="mui-media-body"  style="font-size: 14px;">
+		                	地区
+		                	<font style="float: right;color: gray;" id="area">广东  揭阳</font>
+		                </div>
+		            </a>
+		        </li>
+		         <li class="mui-table-view-cell mui-media" id="per_signature">
+		            <a href="javascript:;">	            	
+		                <div class="mui-media-body friends" style="font-size: 14px;">
+		                	个性签名
+		                	<font style="float: right;color: gray;" id="signature">努力吧</font>
+		                </div>
+		            </a>
+		        </li>
+	       </ul>
+	     </div>
+	     <div id="popover" class="mui-popover" >
+		     <div  style=" margin-top:20px; margin-left: 20px;">性别</div>
+		     <ul class="mui-table-view  mui-table-view-radio">
+		     	<li  class="mui-table-view-cell">
+		     		<div class="mui-input-row mui-radio">
+					<label>男</label>
+					<input name="radio1" type="radio">
+				    </div>
+		        </li>
+		     	<li  class="mui-table-view-cell">
+		     		<div class="mui-input-row mui-radio">
+					<label>女</label>  
+					<input name="radio1" type="radio">
+				    </div>
+				    
+		     	</li>
+		     </ul>	
+		 </div>
+	</div>
+	
+	    <script type="text/javascript">
+			mui.init()
+			mui.plusReady(function(){
+				document.getElementById('sex').innerHTML=localStorage.getItem('user_sex');
+				document.getElementById('signature').innerHTML=localStorage.getItem('user_signature');
+		        document.getElementById('area').innerHTML=localStorage.getItem('user_area');
+			})
+			
+			var list = document.querySelector('.mui-table-view.mui-table-view-radio');
+			list.addEventListener('selected',function(e){
+				localStorage.setItem('user_sex',e.detail.el.innerText);
+				var currentpage = plus.webview.currentWebview();
+				currentpage.reload();
+			});
+			
+			document.getElementById('per_signature').addEventListener('tap',function(){
+				location.href='person_info_signature.html';
+			})
+			
+			document.getElementById('user_area').addEventListener('tap',function(){
+				location.href='person_info_area.html';
+			})
+		</script>
+	</body>
+
+</html>

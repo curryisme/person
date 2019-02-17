@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/commonStyle.css" />
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+	</head> 
+
+	<body>
+		<header class="headerTitle mui-bar mui-bar-nav" style="background: #000000;">
+           <a id="return" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ><span id="name" style="font-size: 16px;">更改地区</span></a>
+            <button id="send" style="float: right;display: none;" type="button" class="mui-btn mui-btn-green">保存</button>
+        </header> 
+		
+		 <div class="mui-content">	
+			    <input type="text" id="input" value="广东揭阳" style="width: 94%;margin-left: 3%;margin-top:15px;border-left: none;border-right: none;  border-top:none; background: none;"  />			        
+		 </div>
+		<script src="../js/mui.min.js"></script>
+			<script src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function(){
+				 document.getElementById('input').setAttribute('value',localStorage.getItem('user_area'));
+			});
+			
+			$("#input").bind('input propertychange', function() {    
+		      $("#send").show();
+			})
+			
+			 $("#send").on('tap',function(){
+			  var user_area =$("#input").val();
+			  localStorage.setItem('user_area',user_area);
+			    mui.back();
+			 })
+		</script>
+	</body>
+
+</html>
